@@ -51,7 +51,7 @@ fn main() {
         }
 
         commands.call_command(&mut departments);
-        println!("{:?}", departments);
+        println!("{:#?}", departments);
     }
         
 }
