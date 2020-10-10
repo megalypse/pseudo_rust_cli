@@ -20,6 +20,8 @@ impl Commands {
             Commands::add_employee(&self.argument1, &self.argument2, departments);
         } else if self.command == String::from("REMOVE") {
             Commands::remove_employee(&self.argument1, &self.argument2, departments);
+        } else if self.command == String::from("LIST") {
+            Commands::list_employees(&self.argument1, departments)
         }
     }
 
@@ -41,5 +43,11 @@ impl Commands {
         } else {
             println!("Employee not found")
         }
+    }
+
+    fn list_employees(dep_name: &String, departments: &mut HashMap<String, Vec<String>>) {
+        let employees = departments.entry(String::from(dep_name)).or_insert(Vec::new());
+
+        println!("{:?}", employees);
     }
 }

@@ -10,10 +10,10 @@ fn main() {
     let mut input = String::new();
     let exit = String::from("EXIT");
     let mut commands: Commands = Commands::new();
+    println!("Welcome to Head Tracker!");
     loop {
         input = String::new();
 
-        println!("Welcome to Head Tracker!");
 
         io::stdin()
             .read_line(&mut input)
@@ -51,7 +51,6 @@ fn main() {
         }
 
         commands.call_command(&mut departments);
-        println!("{:#?}", departments);
     }
         
 }
